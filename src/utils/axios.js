@@ -2,14 +2,16 @@ import axios from 'axios';
 import {message} from 'antd'
 import qs from 'qs'
 // 1. axios的默认配置
-axios.defaults.baseURL = "http://localhost:7777"
+axios.defaults.baseURL = "http://localhost:6677"
 axios.defaults.headers["Content-Type"]= "application/x-www-form-urlencoded";
 
 
 // 2. 拦截器配置
 axios.interceptors.request.use((config)=>{
   if(config.method === "post"){
-    config.data = qs.stringify(config.data,{ arrayFormat: 'repeat' })
+    // 将js对象转换为查询字符串
+    //config.data = qs.stringify(config.data,{ arrayFormat: 'repeat' })
+    config.data = qs.stringify(config.data,{ allowDots: true })
   }
   return config;
 })
