@@ -113,6 +113,11 @@ class CustomerPage extends React.Component {
     // 将record值绑定表单中
     this.setState({visible:true})
   }
+  toDetails(record){
+    console.log(record);
+    //跳转
+    this.props.history.push("/customerDetails")
+  }
 
   // 组件类务必要重写的方法，表示页面渲染
   render(){
@@ -129,13 +134,14 @@ class CustomerPage extends React.Component {
       dataIndex:'status'
     },{
       title:'操作',
-      width:120,
+      width:160,
       align:"center",
       render:(text,record)=>{
         return (
           <div>
             <Button type='link' size="small" onClick={this.handleDelete.bind(this,record.id)}>删除</Button>
             <Button type='link' size="small" onClick={this.toEdit.bind(this,record)}>修改</Button>
+            <Button type='link' size="small" onClick={this.toDetails.bind(this,record)}>详情</Button>
           </div>
         )
       }
