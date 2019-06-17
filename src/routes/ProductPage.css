@@ -1,0 +1,13 @@
+.product {
+  border-radius: 5px;
+}
+
+.title {
+  line-height: 2em;
+  height: 2em;
+  font-weight: bold;
+}
+
+.btns {
+  margin-bottom: .5em;
+}

@@ -5,6 +5,7 @@ import OrderLinePage from './routes/OrderLinePage'
 import CustomerPage from './routes/CustomerPage'
 import OrderPage from './routes/OrderPage'
 import CustomerDetails from './routes/CustomerDetails'
+import ProductPage from './routes/ProductPage'
 
 import {Layout, Menu, Breadcrumb, Icon} from 'antd'
 
@@ -40,6 +41,12 @@ function RouterConfig({ history }) {
                     <Link to="/order">订单管理</Link>
                   </span>
                 </Menu.Item>
+                <Menu.Item key="3">
+                  <Icon type="desktop" />
+                  <span>
+                    <Link to="/product">产品管理</Link>
+                  </span>
+                </Menu.Item>
               </Menu>
             </Sider>
             <Layout style={{ padding: '0 24px 24px' }}>
@@ -62,6 +69,7 @@ function RouterConfig({ history }) {
                   <Route path="/customer" exact component={CustomerPage} />
                   <Route path="/order" exact component={OrderPage} />
                   <Route path="/customerDetails" exact component={CustomerDetails} />
+                  <Route path="/product" exact component={ProductPage} />
                   
                 </Switch>
               </Content>
