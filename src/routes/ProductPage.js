@@ -144,7 +144,7 @@ class ProductPage extends React.Component {
       }
     },{
       title:'操作',
-      width:160,
+      width:170,
       align:"center",
       render:(text,record)=>{
         return (

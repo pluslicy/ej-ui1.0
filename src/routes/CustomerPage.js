@@ -115,8 +115,11 @@ class CustomerPage extends React.Component {
   }
   toDetails(record){
     console.log(record);
-    //跳转
-    this.props.history.push("/customerDetails")
+    //跳转 react-router
+    this.props.history.push({
+      pathname:"/customerDetails",
+      payload:record
+    })
   }
 
   // 组件类务必要重写的方法，表示页面渲染
@@ -134,7 +137,7 @@ class CustomerPage extends React.Component {
       dataIndex:'status'
     },{
       title:'操作',
-      width:160,
+      width:170,
       align:"center",
       render:(text,record)=>{
         return (
